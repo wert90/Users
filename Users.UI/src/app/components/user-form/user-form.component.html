@@ -1,0 +1,74 @@
+<section class="container">
+  <h1 class="text-center" style="margin-top:30px;">Registro de Usuários</h1>
+    <div class="row py-lg-4">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <form [formGroup]="userForm">
+            <div class="col-md-6">
+                <label for="txtName" class="form-label">Nome</label>
+                <input type="text" 
+                  [ngClass]="{ 'form-control' : true,
+                  'is-valid' : isValidFormControl('userName'),
+                  'is-invalid' : isInvalidFormControl('userName') }"  
+                  id="txtName"
+                  maxlength="32"
+                  formControlName="userName">
+              </div>
+              <div class="col-12">
+                <label for="txtSurname" class="form-label">Sobrenome</label>
+                <input type="text" 
+                  [ngClass]="{ 'form-control' : true,
+                  'is-valid' : isValidFormControl('userSurname'),
+                  'is-invalid' : isInvalidFormControl('userSurname') }" 
+                  id="txtSurname" 
+                  placeholder="example@gmail.com"
+                  maxlength="80"
+                  formControlName="userSurname">
+              </div>
+              <div class="col-12">
+                <label for="txtEmail" class="form-label">Email</label>
+                <input type="text" 
+                  [ngClass]="{ 'form-control' : true,
+                  'is-valid' : isValidFormControl('userEmail'),
+                  'is-invalid' : isInvalidFormControl('userEmail') }" 
+                  id="txtEmail" 
+                  placeholder="example@gmail.com"
+                  maxlength="80"
+                  formControlName="userEmail">
+              </div>
+              <div class="col-12">
+                <label for="txtDob" class="form-label">Data de Nascimento</label>
+                <input type="date" 
+                  [ngClass]="{ 'form-control' : true,
+                  'is-valid' : isValidFormControl('userDateBirth'),
+                  'is-invalid' : isInvalidFormControl('userDateBirth') }" 
+                  id="txtDob" 
+                  formControlName="userDateBirth">
+              </div>
+              <div class="col-12">
+                <label for="txtScholarity" class="form-label">Escolaridade</label>
+                <input type="number" 
+                  [ngClass]="{ 'form-control' : true,
+                  'is-valid' : isValidFormControl('userScholarity'),
+                  'is-invalid' : isInvalidFormControl('userScholarity') }" 
+                  id="txtScholarity" 
+                  formControlName="userScholarity">
+              </div>
+
+              <div class="col-12" style="margin-top: 15px">
+                <button type="submit" 
+                  class="btn btn-primary"
+                  (click)="closeForm()">       
+                  <span class="sr-only">Voltar</span>          
+                </button>
+              </div>
+              <div class="col-12" style="margin-top: 15px">
+                <button type="submit" 
+                  class="btn btn-primary"
+                  (click)="addUser()">       
+                  <span class="sr-only">Cadastrar usuário</span>          
+                </button>
+              </div>
+        </form>
+      </div>
+    </div>
+</section>

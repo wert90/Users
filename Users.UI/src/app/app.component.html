@@ -1,0 +1,38 @@
+<section *ngIf="!showForm" class="container">
+  <h1 class="text-center" style="margin-top:30px;">Registro de Usuários</h1>
+  <div class="row py-lg-4">
+    <form [formGroup]="searchForm"
+    novalidate
+    class="row g-3">
+    <div class="col-md-6">
+      <label for="inputName" class="form-label">Nome</label>
+      <input type="text" class="form-control" id="inputName" formControlName="name">
+    </div>
+    <div class="col-md-6">
+      <label for="inputSurname" class="form-label">Sobrenome</label>
+      <input type="text" class="form-control" id="inputSurname" formControlName="surname">
+    </div>
+
+    <div class="col-12">
+      <button type="submit" 
+        class="btn btn-primary"
+        (click)="searchUsers()">       
+        <span class="sr-only">Buscar</span>          
+      </button>
+    </div>
+    <div class="col-12">
+      <button type="submit" 
+        class="btn btn-primary"
+        (click)="showAddUserForm()">       
+        <span class="sr-only">Adicionar usuário</span>          
+      </button>
+    </div>
+  </form>
+    <hr class="my-4">
+    <div class="col-lg-8 col-md-8 mx-auto">
+      <app-user-table [users]="users"></app-user-table>
+    </div>
+  </div>
+</section>
+<app-user-form *ngIf="showForm"
+  (closeFormEvent)="closeForm()"></app-user-form>

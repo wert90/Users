@@ -1,0 +1,13 @@
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th *ngFor="let value of tableHeaderValues"
+                scope="col">{{value}}</th>
+        </tr>
+    </thead>
+    <tbody>
+        <ng-container *ngFor="let user of users; let i = index">
+            <tr app-user-table-row [user]="user"></tr>
+        </ng-container>
+    </tbody>
+  </table>
