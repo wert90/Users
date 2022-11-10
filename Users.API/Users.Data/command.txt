@@ -1,0 +1,1 @@
+Scaffold-DbContext 'data source=localhost; initial catalog=MyDB;persist security info=True; Integrated Security=SSPI; TrustServerCertificate=True' Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -ContextDir ./ -Context MyDBContext -DataAnnotations -NoOnConfiguring -f
