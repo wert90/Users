@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { UserDTO } from 'src/app/@core/http/users-client';
 
 @Component({
@@ -7,12 +7,21 @@ import { UserDTO } from 'src/app/@core/http/users-client';
 })
 export class UserTableComponent implements OnInit {
 
-  tableHeaderValues: string[] = ["#", "Nome", "Sobrenome", "Email", "Data de Nasc.", "Escolaridade"];
+  tableHeaderValues: string[] = ["#", "Nome", "Sobrenome", "Email", "Data de Nasc.", "Escolaridade", "", ""];
   @Input() users: UserDTO[] = [];
+  @Output() editUserEvent: EventEmitter<UserDTO> = new EventEmitter<UserDTO>();
+  @Output() deleteUserEvent: EventEmitter<UserDTO> = new EventEmitter<UserDTO>();
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  editUser(user: UserDTO){
+    this.editUserEvent.emit(user);
+  }
+
+  deleteUser(user: UserDTO){
+    this.deleteUserEvent.emit(user);
+  }
 }

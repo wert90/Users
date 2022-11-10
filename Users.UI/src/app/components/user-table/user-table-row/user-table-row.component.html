@@ -5,4 +5,6 @@
     <td>{{user.email}}</td>
     <td>{{user.dataNascimento | date: 'dd/MM/yyyy'}}</td>
     <td>{{user.escolaridade}}</td>
+    <td><a href="javascript:void(0);" (click)="editUser()">Editar</a></td>
+    <td><a href="javascript:void(0);" (click)="deleteUser()">Exluir</a></td>
 </ng-container>

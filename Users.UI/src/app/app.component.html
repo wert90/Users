@@ -30,9 +30,14 @@
   </form>
     <hr class="my-4">
     <div class="col-lg-8 col-md-8 mx-auto">
-      <app-user-table [users]="users"></app-user-table>
+      <app-user-table [users]="users"
+      (editUserEvent)="setEditUser($event)"
+      (deleteUserEvent)="deleteUser($event)"></app-user-table>
     </div>
   </div>
 </section>
 <app-user-form *ngIf="showForm"
-  (closeFormEvent)="closeForm()"></app-user-form>
+  [user]="selectedUser"
+  (closeFormEvent)="closeForm()"
+  (addUserEvent)="addUser($event)"
+  (updateUserEvent)="updateUser($event)"></app-user-form>

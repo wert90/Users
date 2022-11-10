@@ -20,7 +20,6 @@
                   'is-valid' : isValidFormControl('userSurname'),
                   'is-invalid' : isInvalidFormControl('userSurname') }" 
                   id="txtSurname" 
-                  placeholder="example@gmail.com"
                   maxlength="80"
                   formControlName="userSurname">
               </div>
@@ -64,8 +63,8 @@
               <div class="col-12" style="margin-top: 15px">
                 <button type="submit" 
                   class="btn btn-primary"
-                  (click)="addUser()">       
-                  <span class="sr-only">Cadastrar usuário</span>          
+                  (click)="addOrUpdateUser()">       
+                  <span class="sr-only">{{ isEdit ? 'Atualizar cadastro' : 'Cadastrar usuário' }}</span>          
                 </button>
               </div>
         </form>

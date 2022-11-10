@@ -11,6 +11,7 @@ import { environment } from 'src/environments/environment';
 import { HttpClientModule } from '@angular/common/http';
 import { UserFormComponent } from './components/user-form/user-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { ReactiveFormsModule } from '@angular/forms';
       provide: USERS_API_URL,
       useValue: environment.usersApiUrl
     },
+    DatePipe
   ],
   bootstrap: [AppComponent]
 })

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { UserDTO } from 'src/app/@core/http/users-client';
 
 @Component({
@@ -8,10 +8,19 @@ import { UserDTO } from 'src/app/@core/http/users-client';
 export class UserTableRowComponent implements OnInit {
 
   @Input() user: UserDTO | undefined = undefined;
+  @Output() editUserEvent: EventEmitter<UserDTO> = new EventEmitter<UserDTO>();
+  @Output() deleteUserEvent: EventEmitter<UserDTO> = new EventEmitter<UserDTO>();
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  editUser(){
+    this.editUserEvent.emit(this.user);
+  }
+
+  deleteUser(){
+    this.deleteUserEvent.emit(this.user);
+  }
 }
